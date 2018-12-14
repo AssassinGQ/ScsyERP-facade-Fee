@@ -6,6 +6,7 @@ import com.alibaba.fastjson.annotation.JSONField;
 
 import javax.persistence.Entity;
 import java.util.Date;
+import java.util.HashSet;
 import java.util.Set;
 
 @Entity
@@ -23,6 +24,7 @@ public class OnTruckForm extends FormEntity {
 
     public OnTruckForm() {
         super();
+        this.Pictures = new HashSet<>();
     }
 
     public String getFormNumber() {
@@ -109,7 +111,10 @@ public class OnTruckForm extends FormEntity {
     }
 
     public void setPictures(Set<Long> pictures) {
-        Pictures = pictures;
+        if(pictures == null)
+            this.Pictures = new HashSet<>();
+        else
+            Pictures = pictures;
     }
 
     @Override
