@@ -6,4 +6,5 @@ import cn.AssassinG.ScsyERP.common.core.service.FormService;
 public interface OnTruckFormServiceFacade extends FormService<OnTruckForm> {
     void addPicture(Long entityId, Long pictureId);
     void removePicture(Long entityId, Long pictureId);
+
 }
